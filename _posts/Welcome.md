@@ -1,0 +1,14 @@
+---
+layout:     post
+title:      "Welcome to My Blog"
+subtitle:   " \"Hello World, Hello Blog\""
+date:       2018/8/25 15:30
+author:     "Hux"
+header-img: "img/title-bg/post-bg-18-8-25.jpg"
+tags:
+    - 生活
+---
+
+
+# Today
+

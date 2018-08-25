@@ -12,11 +12,11 @@ baseurl: ""         # for example, '/blog' if your blog hosted on 'host/blog'
 
 # SNS settings
 RSS: false
-weibo_username:     Weibo
-zhihu_username:     Zhihu
-github_username:    Vove7
+#weibo_username:     Weibo
+#zhihu_username:     Zhihu
+github_username:    vove7
 #twitter_username:  huxpro
-facebook_username:  ...
+#facebook_username:  ...
 
 
 
@@ -83,7 +83,7 @@ featured-condition-size: 1              # A tag will be featured if the size of 
 friends: [
     {
         title: "Hux Blog",
-        href: "http://huangxuan.me"
+        href: "http://vove7.github.io"
     },{
         title: "Foo",
         href: "#"
