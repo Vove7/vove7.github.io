@@ -11,7 +11,7 @@ tags:
 
 ## 目录
 
-<!-- MarkdownTOC -->
+<!-- MarkdownTOC autoanchor="true" -->
 
 - [TapToView](#taptoview)
     - [效果预览](#%E6%95%88%E6%9E%9C%E9%A2%84%E8%A7%88)
@@ -27,12 +27,14 @@ tags:
 
 
 
+<a id="taptoview"></a>
 # TapToView
 
 > 一个用于手指短按触发，松开释放的Library。有效解决与父级View的事件冲突
 
 
 
+<a id="%E6%95%88%E6%9E%9C%E9%A2%84%E8%A7%88"></a>
 ## 效果预览
 
 v1.0.1 加入揭露效果
@@ -45,8 +47,10 @@ v1.0.1 加入揭露效果
 
 ![preview3](https://github.com/Vove7/TapToView/blob/master/screenshot/3.gif?raw=true)
 
+<a id="%E4%BD%BF%E7%94%A8%E6%AD%A5%E9%AA%A4"></a>
 ## 使用步骤
 
+<a id="%E5%BC%95%E7%94%A8"></a>
 ### 引用
 
 Step 1.Add it in your root build.gradle at the end of repositories:
@@ -64,12 +68,14 @@ dependencies {
     implementation 'com.github.Vove7:TapToView:1.0.1'
 }
 ```
+<a id="%E4%BD%BF%E7%94%A8"></a>
 ### 使用
 
 >  **这里均使用Kotlin**
 
 >  ***就不客气了，直接上代码***
 
+<a id="%E6%99%AE%E9%80%9Aview"></a>
 #### 普通View
 
 Activity code（图2）: 
@@ -122,6 +128,7 @@ class MainActivity : AppCompatActivity(), OnTapEvent {
     }
 }
 ```
+<a id="listview"></a>
 #### ListView
 
 ListAdapter（图3，4）
@@ -223,6 +230,7 @@ class DemoHolder(itemView: View) : BaseListAdapter.ViewHolder(itemView) {
 
 class Data(var text: String, var imgId: Int)
 ```
+<a id="poputil"></a>
 ## PopUtil
 
 ```kotlin
@@ -256,6 +264,7 @@ object PopUtil {
                                   cirReveal: Boolean = true, fingerPoint: Point? = null): PopupWindow
 }
 ```
+<a id="%E5%B7%B2%E7%9F%A5-bug"></a>
 ## 已知 'Bug'
 
 - 1、同时触摸注册Tap2View事件的多个View就会挂挂。如有需求，各位可自行加'锁'控制。😄
