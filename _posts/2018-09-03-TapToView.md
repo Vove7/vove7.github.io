@@ -9,14 +9,24 @@ tags:
     - Android
 ---
 
+## 目录
 
+1. [效果预览](#效果预览)
+2. [使用步骤](#使用步骤)
+   1. [引用](#使用步骤)
+   2. [使用](#使用)
+      1. [普通View](#普通View)
+      2. [ListView](#ListView)
+3. [PopUtil](#PopUtil)
+4. [已知 'Bug'](#已知-Bug')
 
 
 
 # TapToView
 
 > 一个用于手指短按触发，松开释放的Library。有效解决与父级View的事件冲突
-[TOC]
+
+
 
 ## 效果预览
 
