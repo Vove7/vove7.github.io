@@ -11,14 +11,19 @@ tags:
 
 ## 目录
 
-1. [效果预览](#效果预览)
-2. [使用步骤](#使用步骤)
-   1. [引用](#使用步骤)
-   2. [使用](#使用)
-      1. [普通View](#普通View)
-      2. [ListView](#ListView)
-3. [PopUtil](#PopUtil)
-4. [已知 'Bug'](#已知-Bug')
+<!-- MarkdownTOC -->
+
+- [TapToView](#taptoview)
+    - [效果预览](#%E6%95%88%E6%9E%9C%E9%A2%84%E8%A7%88)
+    - [使用步骤](#%E4%BD%BF%E7%94%A8%E6%AD%A5%E9%AA%A4)
+        - [引用](#%E5%BC%95%E7%94%A8)
+        - [使用](#%E4%BD%BF%E7%94%A8)
+            - [普通View](#%E6%99%AE%E9%80%9Aview)
+            - [ListView](#listview)
+    - [PopUtil](#poputil)
+    - [已知 'Bug'](#%E5%B7%B2%E7%9F%A5-bug)
+
+<!-- /MarkdownTOC -->
 
 
 
