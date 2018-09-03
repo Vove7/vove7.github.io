@@ -9,28 +9,27 @@ tags:
     - Android
 ---
 
-## 目录
-
-<!-- MarkdownTOC autoanchor="true" -->
-
-- [TapToView](#taptoview)
-    - [效果预览](#%E6%95%88%E6%9E%9C%E9%A2%84%E8%A7%88)
-    - [使用步骤](#%E4%BD%BF%E7%94%A8%E6%AD%A5%E9%AA%A4)
-        - [引用](#%E5%BC%95%E7%94%A8)
-        - [使用](#%E4%BD%BF%E7%94%A8)
-            - [普通View](#%E6%99%AE%E9%80%9Aview)
-            - [ListView](#listview)
-    - [PopUtil](#poputil)
-    - [已知 'Bug'](#%E5%B7%B2%E7%9F%A5-bug)
-
-<!-- /MarkdownTOC -->
-
-
 
 <a id="taptoview"></a>
 # TapToView
 
 > 一个用于手指短按触发，松开释放的Library。有效解决与父级View的事件冲突
+
+
+## 目录
+
+<!-- MarkdownTOC autoanchor="true" -->
+
+- [效果预览](#%E6%95%88%E6%9E%9C%E9%A2%84%E8%A7%88)
+- [使用步骤](#%E4%BD%BF%E7%94%A8%E6%AD%A5%E9%AA%A4)
+    - [引用](#%E5%BC%95%E7%94%A8)
+    - [使用](#%E4%BD%BF%E7%94%A8)
+        - [普通View](#%E6%99%AE%E9%80%9Aview)
+        - [ListView](#listview)
+- [PopUtil](#poputil)
+- [已知 'Bug'](#%E5%B7%B2%E7%9F%A5-bug)
+
+<!-- /MarkdownTOC -->
 
 
 
