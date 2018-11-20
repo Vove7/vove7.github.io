@@ -2,7 +2,7 @@
 title: Vove's Blog
 SEOTitle: Vove | Blog
 header-img: img/home-bg.jpg
-email: vove7@.com
+email: vove7@qq.com
 description: ""
 keyword: ""
 url: "https://vove7.github.io"              # your host, for absolute URL
@@ -32,7 +32,7 @@ anchorjs: true                          # if you want to customize anchor. check
 
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
-gems: [jekyll-paginate]
+plugins: [jekyll-paginate,rouge]
 
 
 
