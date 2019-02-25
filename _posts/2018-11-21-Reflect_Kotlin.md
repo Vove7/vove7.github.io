@@ -3,7 +3,7 @@ layout:     post
 title:      "反射调用Kotlin类里的Companion函数"
 subtitle:   "支持重载、检查可空类型"
 date:       2018-11-20 16:00
-author:     "Hux"
+author:     "Vove"
 header-img: "img/title-bg/post-bg-18-8-25.jpg"
 tags:
     - kotlin
