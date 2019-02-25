@@ -9,7 +9,6 @@ tags:
     - kotlin
     - reflection
 ---
-
 > 支持重载、检查可空类型
 
 此时有个类`C`
@@ -66,7 +65,7 @@ null 1 + 2 = 3
 其中`KotlinReflectHelper`类：
 
 ```kotlin
-object KotlinReflectHelper : ReflectHelper() {
+object KotlinReflectHelper {
     /**
      * 反射调用Kotlin类里的Companion函数
      * 支持函数重载调用
@@ -115,3 +114,76 @@ object KotlinReflectHelper : ReflectHelper() {
 1. 添加依赖`implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
 `或下载`kotlin-reflect.jar`包
 
+
+#### 另一种方式
+
+指定参数类型
+
+```kotlin
+
+    /**
+     * 
+     * @param cls Class<*> 类 可通过Class.forName(..) 获取
+     * @param name String 函数名
+     * @param argPairs Array<out Pair<Class<*>, Any?>> first: 值类型, second: 值
+     * @return Any? 函数返回值
+     */
+    @Throws
+    fun invokeCompanion(cls: Class<*>, name: String, vararg argPairs: Pair<Class<*>, Any?>): Any? {
+//        println("调用函数：  ----> $name(${Arrays.toString(argPairs)})")
+        val types = arrayOfNulls<KClass<*>>(argPairs.size)
+        val args = arrayOfNulls<Any>(argPairs.size)
+        var i = 0
+        argPairs.forEach {
+            types[i] = Reflection.createKotlinClass(it.first)
+            args[i++] = it.second
+        }
+
+        val k = Reflection.createKotlinClass(cls)
+        k.companionObject?.declaredFunctions?.forEach eachFun@{ f ->
+//            println("invokeCompanionMethod 匹配函数 ----> ${f.name}()")
+            val ps = f.parameters
+            if (f.name == name && ps.size == argPairs.size + 1) {//函数名相同, 参数数量相同
+                //匹配函数参数
+                ps.subList(1, ps.size).withIndex().forEach {
+                    val paramType = it.value.type
+                    val userType = types[it.index]!!.defaultType
+                    val typeMatch = paramType.withNullability(false).isSubtypeOf(userType)
+                    if (!typeMatch) {
+//                        println("invokeCompanionMethod  ----> 参数类型不匹配")
+                        return@eachFun //匹配下一个函数
+                    }
+                    //else 参数可空 给定参数空 过
+                }
+                val argsWithInstance = arrayOf(k.companionObjectInstance, *args)
+                return f.call(*argsWithInstance)
+            } else {
+//                println("invokeCompanionMethod  ----> 名称or参数数量不同")
+            }
+        }
+        throw Exception("no companion method named : $name")
+    }
+```
+
+测试：
+```kotlin
+
+@Test
+fun kotlinReflectTest2() {
+    val cls = Class.forName("cn.vassistant.repluginapi.C")
+    KotlinReflectHelper.invokeCompanion(cls, "a")//无参数函数
+    KotlinReflectHelper.invokeCompanion(cls, "b", Pair(String::class.java, "sss"))//可空参数函数
+    KotlinReflectHelper.invokeCompanion(cls, "b", Pair(Int::class.java, null))//可空参数函数
+    KotlinReflectHelper.invokeCompanion(cls, "b", Pair(Int::class.java, 1))//重载函数
+    val s = KotlinReflectHelper.invokeCompanion(cls, "c")//返回值函数
+    println(s)
+
+    var r = KotlinReflectHelper.invokeCompanion(cls, "e", Pair(Int::class.java, 1),
+            Pair(Int::class.java, 2), Pair(String::class.java, "求和"))//多参数函数
+    println(r)
+    r = KotlinReflectHelper.invokeCompanion(cls, "e", Pair(Int::class.java, 1),
+            Pair(Int::class.java, 2), Pair(String::class.java, null))//多参数函数
+    println(r)
+}
+
+```
