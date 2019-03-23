@@ -1,10 +1,10 @@
 # Site settings
-title: Vove
+title: "Vove"
 SEOTitle: Vove | Blog
 header-img: img/home-bg.jpg
 email: vove7@qq.com
 description: "Vove"
-keyword: ""
+keyword: "Vove"
 url: "https://vove7.github.io"              # your host, for absolute URL
 baseurl: ""         # for example, '/blog' if your blog hosted on 'host/blog'
 
@@ -61,7 +61,7 @@ kramdown:
 ba_track_id: 4cc1f2d8f3067386cc5cdb626a202900
 # Google Analytics
 ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
-ga_domain: vove7.cn
+ga_domain: vove7.github.io
 
 
 
