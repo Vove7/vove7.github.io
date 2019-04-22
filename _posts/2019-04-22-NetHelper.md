@@ -67,7 +67,7 @@ data class ResponseModelDemo(
 ```
 ### 引入
 
-见[VTP]([![](https://jitpack.io/v/Vove7/VTP.svg)](https://jitpack.io/#Vove7/VTP))
+参见[VTP](https://github.com/Vove7/VTP)
 
 源码亦在此仓库
 
