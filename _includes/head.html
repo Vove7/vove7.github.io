@@ -4,7 +4,7 @@
     <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{ site.description }}">
-    <meta name="keyword"  content="{{ site.keyword }}">
+    <meta name="keyword" content="{{ site.keyword }}">
     <link rel="shortcut icon" href="{{ site.baseurl }}/img/favicon.ico">
 
     <title>{% if page.title %}{{ page.title }} - {{ site.SEOTitle }}{% else %}{{ site.SEOTitle }}{% endif %}</title>
@@ -42,4 +42,16 @@
 
     <!-- ga & ba script hoook -->
     <script></script>
+
+    <!--markdown样式   https://highlightjs.org/-->
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/xcode.min.css">
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github-gist.min.css"> -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script> hljs.initHighlightingOnLoad(); </script>
+    <style>
+        .hljs {
+            background: transparent !important;
+        }
+    </style>
 </head>
